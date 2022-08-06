@@ -1,0 +1,14 @@
+mainmenu "CoreMArk Pro benchmark"
+
+choice
+	prompt "CoreMark Pro benchmark"
+	default CMP_COREMARK
+
+config CMP_COREMARK
+	bool "coremark"
+	help
+	  core benchmark
+
+endchoice
+
+source "Kconfig.zephyr"
