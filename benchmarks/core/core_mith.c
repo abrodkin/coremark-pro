@@ -23,7 +23,7 @@ Please refer to LICENSE.md for the specific license agreement that pertains to t
 #include "core_mith.h"
 
 core_params presets_core[] = {
-	{0x3415,0x3415,0x66,31,2048,9,10000 ,0,NULL,0,
+	{0x3415,0x3415,0x66,31,666,9,10000 ,0,NULL,0,
 	{0x32cc,0xebc9,0x7e4d,0x535b}}
 ,
 	{0x0,0x0,0x66,31,2048,9,1000 ,0,NULL,1,
@@ -164,7 +164,7 @@ void *bmark_init_core(void *in_params) {
 	{
 		ee_u32 per_item=16+sizeof(struct list_data_s); /* to accomodate systems with 64b pointers, and make sure same code is executed, set max list elements */
 		p->results->list=core_list_init(p->li,p->results->memblock[1],p->results->seed1);
-		core_init_matrix(mem_req[ID_MATRIX], p->results->memblock[2], (ee_s32)p->results->seed1 | (((ee_s32)p->results->seed2) << 16), &(p->results->mat), p->mn );
+		core_init_matrix(/*mem_req[ID_MATRIX]*/666, p->results->memblock[2], (ee_s32)p->results->seed1 | (((ee_s32)p->results->seed2) << 16), &(p->results->mat), p->mn );
 		core_init_state(p->ss,p->results->seed1,p->results->memblock[3]);
 	}
 	
